@@ -1,5 +1,6 @@
 package org.aeldi.deadlyland.terra;
 
+import net.minecraft.block.DeadCoralFanBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
@@ -28,8 +29,8 @@ public class ModBiome {
         DefaultBiomeFeatures.addDungeons(generationSettings);
         DefaultBiomeFeatures.addMineables(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
-        DefaultBiomeFeatures.addDefaultDisks(generationSettings);
         DefaultBiomeFeatures.addSprings(generationSettings);
+        DefaultBiomeFeatures.addSavannaGrass(generationSettings);
 
         return (new Biome.Builder())
                 .temperatureModifier(Biome.TemperatureModifier.NONE)
