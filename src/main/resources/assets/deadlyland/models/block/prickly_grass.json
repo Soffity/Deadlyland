@@ -1,0 +1,7 @@
+{
+  "credit": "Made with Blockbench",
+  "textures": {
+    "cross": "deadlyland:block/prickly_grass",
+    "particle": "deadlyland:block/prickly_grass"
+  }
+}

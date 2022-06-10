@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "deadlyland",
+  "version": "${version}",
+  "name": "Deadlyland",
+  "description": "dddd",
+  "authors": [
+    "aElDi"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/deadlyland/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.aeldi.deadlyland.client.DeadlylandClient"
+    ],
+    "main": [
+      "org.aeldi.deadlyland.Deadlyland"
+    ],
+    "terrablender": [
+      "org.aeldi.deadlyland.Deadlyland"
+    ]
+  },
+  "mixins": [
+    "deadlyland.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "minecraft": "1.18.2",
+    "terrablender": ""
+  }
+}

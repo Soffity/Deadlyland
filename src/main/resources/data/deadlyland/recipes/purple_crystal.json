@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "cd"
+  ],
+  "key": {
+    "c": {
+      "item": "deadlyland:pink_crystal"
+    },
+    "d": {
+      "item": "minecraft:dragon_breath"
+    }
+  },
+  "result": {
+    "item": "deadlyland:purple_crystal"
+  }
+}

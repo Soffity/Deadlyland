@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "cd"
+  ],
+  "key": {
+    "c": {
+      "item": "deadlyland:pink_crystal"
+    },
+    "d": {
+      "item": "minecraft:heart_of_the_sea"
+    }
+  },
+  "result": {
+    "item": "deadlyland:blue_crystal"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "deadlyland:pink_crystal",
+    "deadlyland:red_crystal",
+    "deadlyland:green_crystal",
+    "deadlyland:blue_crystal",
+    "deadlyland:purple_crystal"
+  ]
+}

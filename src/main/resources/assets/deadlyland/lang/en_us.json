@@ -1,0 +1,17 @@
+{
+  "block.deadlyland.prickly_grass": "Prickly Grass",
+  "block.deadlyland.baobab_leaves": "Baobab Leaves",
+  "block.deadlyland.crystal_ore": "Crystal Ore",
+  "item.deadlyland.baobab_fruit": "Baobab Fruit",
+  "item.deadlyland.netherite_hammer": "Netherite Hammer",
+  "item.deadlyland.pink_crystal": "Pink Crystal",
+  "item.deadlyland.pink_crystal.tooltip": "Basic Crystal uses in crafts",
+  "item.deadlyland.red_crystal": "Red Crystal",
+  "item.deadlyland.red_crystal.tooltip": "If imposed on weapon:  + 0.5 Attack Speed",
+  "item.deadlyland.green_crystal": "Green Crystal",
+  "item.deadlyland.green_crystal.tooltip": "If imposed on armor:  + Jump Boost",
+  "item.deadlyland.blue_crystal": "Blue Crystal",
+  "item.deadlyland.blue_crystal.tooltip": "If imposed on armor:  + Speed",
+  "item.deadlyland.purple_crystal": "Purple Crystal",
+  "item.deadlyland.purple_crystal.tooltip": "If imposed on armor:  + 4 Health"
+}

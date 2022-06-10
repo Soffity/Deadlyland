@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "cd"
+  ],
+  "key": {
+    "c": {
+      "item": "deadlyland:pink_crystal"
+    },
+    "d": {
+      "item": "minecraft:rabbit_foot"
+    }
+  },
+  "result": {
+    "item": "deadlyland:green_crystal"
+  }
+}
