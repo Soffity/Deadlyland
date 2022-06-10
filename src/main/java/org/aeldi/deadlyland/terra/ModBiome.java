@@ -1,5 +1,7 @@
 package org.aeldi.deadlyland.terra;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -19,6 +21,7 @@ public class ModBiome {
     public static Biome Deadly_plants() {
         SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addMonsters(spawnSettings, 40, 5, 90, false);
+        spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.HUSK, 80, 4, 4));
 
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
         generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION, PricklyGrassFeature.GRASS_PLACED);
@@ -37,9 +40,9 @@ public class ModBiome {
                 .temperature(2F)
                 .category(Biome.Category.NONE)
                 .effects(new BiomeEffects.Builder()
-                        .grassColor(0xe0a800)
-                        .waterColor(0x3f76e4)
-                        .waterFogColor(0x3f76e4)
+                        .grassColor(0xffff57)
+                        .waterColor(0xff9757)
+                        .waterFogColor(0xff9757)
                         .fogColor(0xc0d8ff)
                         .skyColor(0x3f76e4).build()).build();
     }
