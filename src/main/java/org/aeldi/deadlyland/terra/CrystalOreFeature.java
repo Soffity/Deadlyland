@@ -24,7 +24,7 @@ public class CrystalOreFeature {
     );
 
     public static PlacedFeature CRYSTAL_ORE_PLACED_FEATURE = new PlacedFeature(RegistryEntry.of(CRYSTAL_ORE_FEATURE), Arrays.asList(
-            CountPlacementModifier.of(5),
+            CountPlacementModifier.of(3),
             SquarePlacementModifier.of(),
             HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))
     ));

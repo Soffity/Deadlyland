@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:village",
+  "config": {
+    "start_pool": "deadlyland:baobab",
+    "size": 1
+  },
+  "biomes": "#deadlyland:biomes",
+  "adapt_noise": true,
+  "spawn_overrides": {}
+}

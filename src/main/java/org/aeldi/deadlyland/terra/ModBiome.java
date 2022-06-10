@@ -24,10 +24,12 @@ public class ModBiome {
         DefaultBiomeFeatures.addMonsters(spawnSettings, 40, 5, 90, false);
         spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.HUSK, 80, 4, 4));
 
+
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
         generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION, PricklyGrassFeature.GRASS_PLACED);
         DefaultBiomeFeatures.addDungeons(generationSettings);
         DefaultBiomeFeatures.addMineables(generationSettings);
+        DefaultBiomeFeatures.addDesertDeadBushes(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
         DefaultBiomeFeatures.addSprings(generationSettings);
         DefaultBiomeFeatures.addSavannaGrass(generationSettings);
@@ -39,12 +41,13 @@ public class ModBiome {
                 .generationSettings(generationSettings.build())
                 .precipitation(Biome.Precipitation.NONE)
                 .temperature(2F)
-                .category(Biome.Category.NONE)
+                .category(Biome.Category.SAVANNA)
                 .effects(new BiomeEffects.Builder()
-                        .grassColor(0xffff57)
-                        .waterColor(0xff9757)
+                        .grassColor(0x9ba137)
+                        .waterColor(0x00fbff)
                         .waterFogColor(0xff9757)
                         .fogColor(0xc0d8ff)
+                        .foliageColor(0xf2ff00)
                         .skyColor(0x3f76e4).build()).build();
     }
 

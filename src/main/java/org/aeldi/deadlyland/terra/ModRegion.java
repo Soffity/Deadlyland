@@ -11,6 +11,7 @@ import terrablender.api.ParameterUtils;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
 import terrablender.api.SurfaceRuleManager;
+import terrablender.worldgen.TBSurfaceRuleData;
 
 import java.util.function.Consumer;
 
@@ -21,7 +22,7 @@ public class ModRegion extends Region {
     }
 
     public static MaterialRules.MaterialRule surface() {
-        return MaterialRules.condition(MaterialRules.surface(), SurfaceRuleManager.getDefaultSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD));
+        return SurfaceRuleManager.getDefaultSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD);
     }
 
     @Override
@@ -29,7 +30,7 @@ public class ModRegion extends Region {
         this.addBiome(mapper,
                 ParameterUtils.Temperature.WARM,
                 ParameterUtils.Humidity.DRY,
-                ParameterUtils.Continentalness.FAR_INLAND,
+                ParameterUtils.Continentalness.INLAND,
                 ParameterUtils.Erosion.EROSION_0,
                 ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING,
                 ParameterUtils.Depth.SURFACE,
