@@ -1,6 +1,6 @@
 {
   "credit": "Made with Blockbench",
-  "parent": "minecraft:tinted_cross",
+  "parent": "minecraft:block/tinted_cross",
   "textures": {
     "cross": "deadlyland:block/prickly_grass",
     "particle": "deadlyland:block/prickly_grass"

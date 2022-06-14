@@ -1,8 +1,9 @@
 package org.aeldi.deadlyland.terra;
 
-import net.minecraft.block.DeadCoralFanBlock;
+import net.minecraft.client.sound.AmbientSoundLoops;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.sound.MusicSound;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -32,7 +33,6 @@ public class ModBiome {
         DefaultBiomeFeatures.addDesertDeadBushes(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
         DefaultBiomeFeatures.addSprings(generationSettings);
-        DefaultBiomeFeatures.addSavannaGrass(generationSettings);
 
         return (new Biome.Builder())
                 .temperatureModifier(Biome.TemperatureModifier.NONE)
@@ -41,7 +41,7 @@ public class ModBiome {
                 .generationSettings(generationSettings.build())
                 .precipitation(Biome.Precipitation.NONE)
                 .temperature(2F)
-                .category(Biome.Category.SAVANNA)
+                .category(Biome.Category.NONE)
                 .effects(new BiomeEffects.Builder()
                         .grassColor(0x9ba137)
                         .waterColor(0x00fbff)

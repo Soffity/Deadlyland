@@ -15,6 +15,7 @@ public class ModBlocks {
     public static final LeavesBlock BAOBAB_LEAVES = new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES));
     public static final OreBlock CRYSTAL_ORE = new OreBlock(FabricBlockSettings.of(new FabricMaterialBuilder(MapColor.CLEAR).build()).strength(3.5f));
     public static final Block GRAVE_DIRT = new GraveDirtBlock(FabricBlockSettings.copyOf(Blocks.DIRT));
+
     public static void registerBlocks() {
         registerBlock("prickly_grass", PRICKLY_GRASS);
         registerBlock("baobab_leaves", BAOBAB_LEAVES);
