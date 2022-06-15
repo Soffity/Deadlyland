@@ -7,12 +7,9 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerAbilities;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -39,25 +36,32 @@ public class CrystalItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         EntityAttribute atr;
-        Iterable<ItemStack> armor = user.getArmorItems();
         switch (name) {
             case "red_crystal":
                 atr = EntityAttributes.GENERIC_ATTACK_SPEED;
-                armor.forEach((ItemStack item) -> {
-                    item.addAttributeModifier(atr, new EntityAttributeModifier("generic.attack_speed", 0.3d, EntityAttributeModifier.Operation.ADDITION), EquipmentSlot.LEGS);
+                ItemStack item_x = user.getInventory().armor.get(2);
+                var def_x = item_x.getAttributeModifiers(EquipmentSlot.CHEST);
+                item_x.addAttributeModifier(atr, new EntityAttributeModifier("attack", 0.5d, EntityAttributeModifier.Operation.ADDITION), EquipmentSlot.HEAD);
+                def_x.forEach((d_atr, d_atr_mod) -> {
+                    item_x.addAttributeModifier(d_atr, d_atr_mod, EquipmentSlot.HEAD);
                 });
                 break;
             case "blue_crystal":
                 atr = EntityAttributes.GENERIC_MOVEMENT_SPEED;
-                armor.forEach((ItemStack item) -> {
-                    item.addAttributeModifier(atr, new EntityAttributeModifier("generic.movement_speed", 0.3d, EntityAttributeModifier.Operation.ADDITION), EquipmentSlot.LEGS);
+                ItemStack item_0x = user.getInventory().armor.get(0);
+                var def_0x = item_0x.getAttributeModifiers(EquipmentSlot.FEET);
+                item_0x.addAttributeModifier(atr, new EntityAttributeModifier("moverment", 0.05d, EntityAttributeModifier.Operation.ADDITION), EquipmentSlot.HEAD);
+                def_0x.forEach((d_atr, d_atr_mod) -> {
+                    item_0x.addAttributeModifier(d_atr, d_atr_mod, EquipmentSlot.FEET);
                 });
                 break;
             case "purple_crystal":
                 atr = EntityAttributes.GENERIC_MAX_HEALTH;
-                armor.forEach((ItemStack item) -> {
-                    NbtCompound nbt = new NbtCompound();
-                    item.addAttributeModifier(atr, new EntityAttributeModifier("generic.max_health", 4.0d, EntityAttributeModifier.Operation.ADDITION), EquipmentSlot.HEAD);
+                ItemStack item_1x = user.getInventory().armor.get(3);
+                var def_1x = item_1x.getAttributeModifiers(EquipmentSlot.HEAD);
+                item_1x.addAttributeModifier(atr, new EntityAttributeModifier("health_boost", 4.0d, EntityAttributeModifier.Operation.ADDITION), EquipmentSlot.HEAD);
+                def_1x.forEach((d_atr, d_atr_mod) -> {
+                    item_1x.addAttributeModifier(d_atr, d_atr_mod, EquipmentSlot.HEAD);
                 });
                 break;
             case "green_crystal":

@@ -1,9 +1,7 @@
 package org.aeldi.deadlyland.terra;
 
-import net.minecraft.client.sound.AmbientSoundLoops;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.sound.MusicSound;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -47,7 +45,7 @@ public class ModBiome {
                         .waterColor(0x00fbff)
                         .waterFogColor(0xff9757)
                         .fogColor(0xc0d8ff)
-                        .foliageColor(0xf2ff00)
+                        .foliageColor(0xbea925)
                         .skyColor(0x3f76e4).build()).build();
     }
 

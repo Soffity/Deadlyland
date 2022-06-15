@@ -7,14 +7,11 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.biome.BuiltinBiomes;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
-import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 import net.minecraft.world.gen.surfacebuilder.VanillaSurfaceRules;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
-import terrablender.api.SurfaceRuleManager;
 
 import java.util.function.Consumer;
 
@@ -33,8 +30,8 @@ public class ModRegion extends Region {
                                 MaterialRules.condition(
                                         MaterialRules.water(-1, 0),
                                         MaterialRules.block(Blocks.DIRT.getDefaultState()
-                                )
-                        ),
+                                        )
+                                ),
                                 MaterialRules.condition(
                                         MaterialRules.water(-10, 0),
                                         MaterialRules.block(Blocks.SAND.getDefaultState())
@@ -47,6 +44,6 @@ public class ModRegion extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        this.addBiomeSimilar(mapper, BiomeKeys.DESERT, ModBiome.DEADLY_PLANTS_KEY);
+        this.addBiomeSimilar(mapper, BiomeKeys.BADLANDS, ModBiome.DEADLY_PLANTS_KEY);
     }
 }
