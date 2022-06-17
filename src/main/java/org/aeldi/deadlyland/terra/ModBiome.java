@@ -23,7 +23,6 @@ public class ModBiome {
         DefaultBiomeFeatures.addMonsters(spawnSettings, 40, 5, 90, false);
         spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.HUSK, 80, 4, 4));
 
-
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
         generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION, PricklyGrassFeature.GRASS_PLACED);
         DefaultBiomeFeatures.addDungeons(generationSettings);
@@ -31,7 +30,6 @@ public class ModBiome {
         DefaultBiomeFeatures.addDesertDeadBushes(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
         DefaultBiomeFeatures.addSprings(generationSettings);
-
         return (new Biome.Builder())
                 .temperatureModifier(Biome.TemperatureModifier.NONE)
                 .downfall(0.1F)
@@ -42,7 +40,7 @@ public class ModBiome {
                 .category(Biome.Category.NONE)
                 .effects(new BiomeEffects.Builder()
                         .grassColor(0x9ba137)
-                        .waterColor(0x00fbff)
+                        .waterColor(0xa89532)
                         .waterFogColor(0xff9757)
                         .fogColor(0xc0d8ff)
                         .foliageColor(0xbea925)

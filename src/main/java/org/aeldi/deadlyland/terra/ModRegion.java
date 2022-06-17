@@ -1,6 +1,7 @@
 package org.aeldi.deadlyland.terra;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -8,6 +9,7 @@ import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import net.minecraft.world.gen.noise.NoiseParametersKeys;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 import net.minecraft.world.gen.surfacebuilder.VanillaSurfaceRules;
 import terrablender.api.Region;
@@ -25,11 +27,24 @@ public class ModRegion extends Region {
 
         return MaterialRules.sequence(
                 MaterialRules.condition(
-                        MaterialRules.STONE_DEPTH_FLOOR,
+                        MaterialRules.surface(),
                         MaterialRules.sequence(
                                 MaterialRules.condition(
                                         MaterialRules.water(-1, 0),
-                                        MaterialRules.block(Blocks.DIRT.getDefaultState()
+                                        MaterialRules.sequence(
+                                            MaterialRules.condition(
+                                                MaterialRules.noiseThreshold(NoiseParametersKeys.PATCH,0.05d, 0.4d),
+                                                block(Blocks.COARSE_DIRT)
+                                            ),
+                                            MaterialRules.condition(
+                                                MaterialRules.noiseThreshold(NoiseParametersKeys.RIDGE,0.4d, 0.8d),
+                                                block(Blocks.ROOTED_DIRT)
+                                            ),
+                                            MaterialRules.condition(
+                                                    MaterialRules.noiseThreshold(NoiseParametersKeys.AQUIFER_LAVA,0.5d),
+                                                    block(Blocks.SOUL_SAND)
+                                            ),
+                                            block(Blocks.DIRT)
                                         )
                                 ),
                                 MaterialRules.condition(
@@ -44,6 +59,13 @@ public class ModRegion extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        this.addBiomeSimilar(mapper, BiomeKeys.BADLANDS, ModBiome.DEADLY_PLANTS_KEY);
+        this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
+            builder.replaceBiome(BiomeKeys.DESERT, ModBiome.DEADLY_PLANTS_KEY);
+        });
+//        this.addBiomeSimilar(mapper, BiomeKeys.BADLANDS, ModBiome.DEADLY_PLANTS_KEY);
+    }
+
+    private static MaterialRules.MaterialRule block(Block b){
+        return MaterialRules.block(b.getDefaultState());
     }
 }
