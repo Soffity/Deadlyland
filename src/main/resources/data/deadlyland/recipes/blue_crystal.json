@@ -1,17 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "cd"
-  ],
-  "key": {
-    "c": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "deadlyland:pink_crystal"
     },
-    "d": {
+    {
       "item": "minecraft:heart_of_the_sea"
     }
-  },
+  ],
   "result": {
-    "item": "deadlyland:blue_crystal"
+    "item": "deadlyland:blue_crystal",
+    "count": 1
   }
 }

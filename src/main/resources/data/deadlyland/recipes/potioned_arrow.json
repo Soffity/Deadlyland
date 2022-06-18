@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sp",
+    "s",
+    "c"
+  ],
+  "key": {
+    "sp": {
+      "item": "deadlyland:spike"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "item": "minecraft:tipped_arrow",
+    "count": 1
+  }
+}

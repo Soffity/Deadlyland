@@ -1,0 +1,19 @@
+{
+  "block.deadlyland.prickly_grass": "Колючая трава",
+  "block.deadlyland.baobab_leaves": "Листва баобаба",
+  "block.deadlyland.crystal_ore": "Кристальная руда",
+  "item.deadlyland.baobab_fruit": "Фрукт баобаба",
+  "item.deadlyland.netherite_hammer": "Незеритовый молот",
+  "item.deadlyland.pink_crystal": "Розовый кристалл",
+  "item.deadlyland.spike": "Шип",
+  "item.deadlyland.baobab_lemonade": "Лимонад из баобаба",
+  "item.deadlyland.pink_crystal.tooltip": "Основной кристалл, применение в крафтах",
+  "item.deadlyland.red_crystal": "Красный кристалл",
+  "item.deadlyland.red_crystal.tooltip": "При наложении на нагрудник:  + 0,5 скорости атаки",
+  "item.deadlyland.green_crystal": "Зелёный кристалл",
+  "item.deadlyland.green_crystal.tooltip": "При использовании:  + Усиление прыжка",
+  "item.deadlyland.blue_crystal": "Голубой кристалл",
+  "item.deadlyland.blue_crystal.tooltip": "При наложении на ноги:  + 30% Cкорость",
+  "item.deadlyland.purple_crystal": "Фиолетовый кристалл",
+  "item.deadlyland.purple_crystal.tooltip": "При наложении на шлем:  + 4 Здоровья"
+}

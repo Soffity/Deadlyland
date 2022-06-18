@@ -14,6 +14,6 @@ public class PricklyGrassFeature {
                     ConfiguredFeatures.createRandomPatchFeatureConfig(12, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PRICKLY_GRASS)))));
     public static final RegistryEntry<PlacedFeature> GRASS_PLACED = PlacedFeatures.register("grass_placed",
-            PRICKLY_GRASS, RarityFilterPlacementModifier.of(8), SquarePlacementModifier.of(),
+            PRICKLY_GRASS, RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 }

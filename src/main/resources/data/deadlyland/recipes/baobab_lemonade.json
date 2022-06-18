@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "deadlyland:pink_crystal"
+      "item": "deadlyland:baobab_fruit"
     },
     {
-      "item": "minecraft:blaze_rod"
+      "item": "minecraft:potion"
     }
   ],
   "result": {
-    "item": "deadlyland:red_crystal",
+    "item": "deadlyland:baobab_lemonade",
     "count": 1
   }
 }

@@ -20,7 +20,7 @@ import java.util.Arrays;
 
 public class CrystalOreFeature {
     public static final ConfiguredFeature<?, ?> CRYSTAL_ORE_FEATURE = new ConfiguredFeature(
-            Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.CRYSTAL_ORE.getDefaultState(), 6)
+            Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.CRYSTAL_ORE.getDefaultState(), 4)
     );
 
     public static PlacedFeature CRYSTAL_ORE_PLACED_FEATURE = new PlacedFeature(RegistryEntry.of(CRYSTAL_ORE_FEATURE), Arrays.asList(

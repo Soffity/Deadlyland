@@ -1,17 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "ch"
-  ],
-  "key": {
-    "h": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "deadlyland:netherite_hammer"
     },
-    "c": {
+    {
       "item": "deadlyland:crystal_ore"
     }
-  },
+  ],
   "result": {
-    "item": "deadlyland:pink_crystal"
+    "item": "deadlyland:pink_crystal",
+    "count": 1
   }
 }

@@ -1,19 +1,17 @@
 package org.aeldi.deadlyland.items;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
-import net.minecraft.item.ToolItem;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import org.aeldi.deadlyland.Deadlyland;
 
 public class ModItems {
-
-    public static final FoodComponent BAOBAB_FRUIT = new FoodComponent.Builder().hunger(4).saturationModifier(1.75f).build();
+    public static final Item SPIKE = new Item(new FabricItemSettings().group(Deadlyland.MOD_GROUP).rarity(Rarity.UNCOMMON));
     public static final ToolItem NETHERITE_HAMMER = new ToolItem(ToolMaterials.NETHERITE, new FabricItemSettings().group(Deadlyland.MOD_GROUP));
-
+    public static final FoodComponent BAOBAB_FRUIT = new FoodComponent.Builder().hunger(4).saturationModifier(1.6f).build();
+    public static final FoodComponent BAOBAB_LEMONADE = new FoodComponent.Builder().hunger(1).saturationModifier(1.6f).build();
     public static final CrystalItem PINK_CRYSTAL = new CrystalItem(new FabricItemSettings().group(Deadlyland.MOD_GROUP), "pink_crystal");
 
     public static final CrystalItem RED_CRYSTAL = new CrystalItem(new FabricItemSettings().group(Deadlyland.MOD_GROUP), "red_crystal");
@@ -22,7 +20,9 @@ public class ModItems {
     public static final CrystalItem PURPLE_CRYSTAL = new CrystalItem(new FabricItemSettings().group(Deadlyland.MOD_GROUP), "purple_crystal");
 
     public static void registerItems() {
+        registerItem("spike", SPIKE);
         registerItem("netherite_hammer", NETHERITE_HAMMER);
+        registerItem("baobab_lemonade", new HoneyBottleItem(new FabricItemSettings().group(Deadlyland.MOD_GROUP).food(BAOBAB_LEMONADE)));
         registerItem("baobab_fruit", new Item(new FabricItemSettings().group(Deadlyland.MOD_GROUP).food(BAOBAB_FRUIT)));
         registerItem("pink_crystal", PINK_CRYSTAL);
         registerItem("red_crystal", RED_CRYSTAL);

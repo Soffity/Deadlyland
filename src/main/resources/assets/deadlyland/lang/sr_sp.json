@@ -1,0 +1,19 @@
+{
+  "block.deadlyland.prickly_grass": "Бодљикава трава",
+  "block.deadlyland.baobab_leaves": "Лишће баобаба",
+  "block.deadlyland.crystal_ore": "Кристална руда",
+  "item.deadlyland.baobab_fruit": "Воће баобаба",
+  "item.deadlyland.netherite_hammer": "Незеритни чекић",
+  "item.deadlyland.pink_crystal": "Ружичасти кристал",
+  "item.deadlyland.spike": "Трн",
+  "item.deadlyland.baobab_lemonade": "Лимунада од баобаба",
+  "item.deadlyland.pink_crystal.tooltip": "Основни кристал, примена у занатима",
+  "item.deadlyland.red_crystal": "Црвени кристал",
+  "item.deadlyland.red_crystal.tooltip": "Када се нанесе на напрсник: + 0,5 брзине напада",
+  "item.deadlyland.green_crystal": "Зелени кристал",
+  "item.deadlyland.green_crystal.tooltip": "Када се користи: + појачање скока",
+  "item.deadlyland.blue_crystal": "Плави кристал",
+  "item.deadlyland.blue_crystal.tooltip": "Када се наноси на ноге: + 30% брзина",
+  "item.deadlyland.purple_crystal": "Љубичасти кристал",
+  "item.deadlyland.purple_crystal.tooltip": "Када се наноси на кацигу: + 4 здравља"
+}
