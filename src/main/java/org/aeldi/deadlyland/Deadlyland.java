@@ -7,8 +7,9 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import org.aeldi.deadlyland.blocks.ModBlocks;
 import org.aeldi.deadlyland.items.ModItems;
+import org.aeldi.deadlyland.terra.BurntPlants;
 import org.aeldi.deadlyland.terra.CrystalOreFeature;
-import org.aeldi.deadlyland.terra.ModBiome;
+import org.aeldi.deadlyland.terra.DeadlylandPlants;
 import org.aeldi.deadlyland.terra.ModRegion;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
@@ -28,7 +29,9 @@ public class Deadlyland implements ModInitializer, TerraBlenderApi {
      */
     @Override
     public void onInitialize() {
-        ModBiome.registerBiome();
+        DeadlylandPlants.registerBiome();
+
+        BurntPlants.registerBiome();
 
         ModItems.registerItems();
 
@@ -40,7 +43,6 @@ public class Deadlyland implements ModInitializer, TerraBlenderApi {
     @Override
     public void onTerraBlenderInitialized() {
         Regions.register(new ModRegion(new Identifier(mod_namespace, "dl_region"), 1));
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, mod_namespace, ModRegion.surface());
-
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, mod_namespace, ModRegion.makeRule());
     }
 }

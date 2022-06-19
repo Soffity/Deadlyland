@@ -23,8 +23,23 @@ public class ModRegion extends Region {
         super(name, RegionType.OVERWORLD, weight);
     }
 
-    public static MaterialRules.MaterialRule surface() {
+    public static MaterialRules.MaterialRule makeRule() {
+        return MaterialRules.sequence(
+                MaterialRules.condition(MaterialRules.biome(DeadlylandPlants.DEADLY_PLANTS_KEY), deadlyland_plants()),
+                MaterialRules.condition(MaterialRules.biome(BurntPlants.BURNT_PLANTS_KEY), burnt_plants())
+        );
+    }
 
+    @Override
+    public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
+        this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
+            builder.replaceBiome(BiomeKeys.DESERT, DeadlylandPlants.DEADLY_PLANTS_KEY);
+            builder.replaceBiome(BiomeKeys.DESERT, BurntPlants.BURNT_PLANTS_KEY);
+        });
+//        this.addBiomeSimilar(mapper, BiomeKeys.BADLANDS, ModBiome.DEADLY_PLANTS_KEY);
+    }
+
+    private static MaterialRules.MaterialRule burnt_plants() {
         return MaterialRules.sequence(
                 MaterialRules.condition(
                         MaterialRules.surface(),
@@ -32,19 +47,44 @@ public class ModRegion extends Region {
                                 MaterialRules.condition(
                                         MaterialRules.water(-1, 0),
                                         MaterialRules.sequence(
-                                            MaterialRules.condition(
-                                                MaterialRules.noiseThreshold(NoiseParametersKeys.PATCH,0.05d, 0.4d),
-                                                block(Blocks.COARSE_DIRT)
-                                            ),
-                                            MaterialRules.condition(
-                                                MaterialRules.noiseThreshold(NoiseParametersKeys.RIDGE,0.4d, 0.8d),
-                                                block(Blocks.ROOTED_DIRT)
-                                            ),
-                                            MaterialRules.condition(
-                                                    MaterialRules.noiseThreshold(NoiseParametersKeys.AQUIFER_LAVA,0.5d),
-                                                    block(Blocks.SOUL_SAND)
-                                            ),
-                                            block(Blocks.DIRT)
+                                                MaterialRules.condition(
+                                                        MaterialRules.noiseThreshold(NoiseParametersKeys.PATCH, 0.05d, 0.4d),
+                                                        block(Blocks.MAGMA_BLOCK)
+                                                ),
+                                                block(Blocks.GRASS_BLOCK)
+                                        )
+                                ),
+                                MaterialRules.condition(
+                                        MaterialRules.water(-10, 0),
+                                        MaterialRules.block(Blocks.SOUL_SAND.getDefaultState())
+                                )
+                        )
+                ),
+                VanillaSurfaceRules.createOverworldSurfaceRule()
+        );
+    }
+
+    private static MaterialRules.MaterialRule deadlyland_plants() {
+        return MaterialRules.sequence(
+                MaterialRules.condition(
+                        MaterialRules.surface(),
+                        MaterialRules.sequence(
+                                MaterialRules.condition(
+                                        MaterialRules.water(-1, 0),
+                                        MaterialRules.sequence(
+                                                MaterialRules.condition(
+                                                        MaterialRules.noiseThreshold(NoiseParametersKeys.PATCH, 0.05d, 0.4d),
+                                                        block(Blocks.COARSE_DIRT)
+                                                ),
+                                                MaterialRules.condition(
+                                                        MaterialRules.noiseThreshold(NoiseParametersKeys.RIDGE, 0.4d, 0.8d),
+                                                        block(Blocks.ROOTED_DIRT)
+                                                ),
+                                                MaterialRules.condition(
+                                                        MaterialRules.noiseThreshold(NoiseParametersKeys.SURFACE_SWAMP, 0.5d, 1.0d),
+                                                        block(Blocks.SOUL_SAND)
+                                                ),
+                                                block(Blocks.DIRT)
                                         )
                                 ),
                                 MaterialRules.condition(
@@ -57,15 +97,7 @@ public class ModRegion extends Region {
         );
     }
 
-    @Override
-    public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
-            builder.replaceBiome(BiomeKeys.DESERT, ModBiome.DEADLY_PLANTS_KEY);
-        });
-//        this.addBiomeSimilar(mapper, BiomeKeys.BADLANDS, ModBiome.DEADLY_PLANTS_KEY);
-    }
-
-    private static MaterialRules.MaterialRule block(Block b){
+    private static MaterialRules.MaterialRule block(Block b) {
         return MaterialRules.block(b.getDefaultState());
     }
 }

@@ -11,7 +11,7 @@ public class ModItems {
     public static final Item SPIKE = new Item(new FabricItemSettings().group(Deadlyland.MOD_GROUP).rarity(Rarity.UNCOMMON));
     public static final ToolItem NETHERITE_HAMMER = new ToolItem(ToolMaterials.NETHERITE, new FabricItemSettings().group(Deadlyland.MOD_GROUP));
     public static final FoodComponent BAOBAB_FRUIT = new FoodComponent.Builder().hunger(4).saturationModifier(1.6f).build();
-    public static final FoodComponent BAOBAB_LEMONADE = new FoodComponent.Builder().hunger(1).saturationModifier(1.6f).build();
+    public static final FoodComponent BAOBAB_LEMONADE = new FoodComponent.Builder().hunger(1).saturationModifier(4.6f).build();
     public static final CrystalItem PINK_CRYSTAL = new CrystalItem(new FabricItemSettings().group(Deadlyland.MOD_GROUP), "pink_crystal");
 
     public static final CrystalItem RED_CRYSTAL = new CrystalItem(new FabricItemSettings().group(Deadlyland.MOD_GROUP), "red_crystal");
